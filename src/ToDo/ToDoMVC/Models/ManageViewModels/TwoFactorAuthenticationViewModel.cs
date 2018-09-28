@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ToDoMVC.Models.ManageViewModels
+namespace ToDoMvc.Models.ManageViewModels
 {
     public class TwoFactorAuthenticationViewModel
     {

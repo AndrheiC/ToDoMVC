@@ -4,12 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ToDoMvc.Models.AccountViewModels
+namespace ToDoMvc.Models
 {
-    public class ForgotPasswordViewModel
+    public class NewToDoItem
     {
         [Required]
-        [EmailAddress]
-        public string Email { get; set; }
+        public string Title { get; set; }
+
+        [Required]
+        public DateTimeOffset DueAt { get; set; }
     }
 }

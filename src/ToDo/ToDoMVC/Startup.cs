@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ToDoMVC.Data;
-using ToDoMVC.Models;
-using ToDoMVC.Services;
+using ToDoMvc.Data;
+using ToDoMvc.Models;
+using ToDoMvc.Services;
 
-namespace ToDoMVC
+namespace ToDoMvc
 {
     public class Startup
     {
@@ -27,7 +27,7 @@ namespace ToDoMVC
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlite(Configuration.GetConnectionString("SQLite")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -35,6 +35,7 @@ namespace ToDoMVC
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddScoped<IToDoItemService, ToDoItemService>();
 
             services.AddMvc();
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ToDoMVC.Models.View
+namespace ToDoMvc.Models.View
 {
     public class ToDoViewModel
     {
